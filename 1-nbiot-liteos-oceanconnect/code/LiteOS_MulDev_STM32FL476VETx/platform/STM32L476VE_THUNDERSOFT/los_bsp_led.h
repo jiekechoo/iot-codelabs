@@ -1,6 +1,9 @@
 #ifndef _LOS_BSP_LED_H
 #define _LOS_BSP_LED_H
 
+#include "stm32l4xx_hal.h"
+#include "stm32l4xx_hal_gpio.h"
+
 #define LED_ON      (1)
 #define LED_OFF     (0)
 #define LOS_LED1    (1)
@@ -9,6 +12,12 @@
 #define LOS_LED4    (4)
 #define LOS_LEDX    (5)
 
+#define LED2_PORT   GPIOB
+#define LED2_PIN    GPIO_PIN_15
+
+
+void LED2_ON(void);
+void LED2_OFF(void);
 
 void LOS_EvbLedInit(void);
 void LOS_EvbLedControl(int index, int cmd);
